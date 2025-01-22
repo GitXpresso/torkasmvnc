@@ -327,7 +327,7 @@ RUN \
     cups-pdf && \
   echo "**** printer config ****" && \
   sed -i \
-    "s:^#Out.*:Out /home/kasm-user/PDF:" \
+    "s:^#Out.*:Out /config/kasm-user/PDF:" \
     /etc/cups/cups-pdf.conf && \
   sed -i \
     's/^SystemGroup .*/SystemGroup lpadmin root/' \
