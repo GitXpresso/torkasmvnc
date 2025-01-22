@@ -150,8 +150,7 @@ RUN \
     --disable-dri2 \
     --disable-kdrive \
     --disable-static \
-    --disable-xephyr \
-    --disable-xinerama \
+    --disable-xephyr \ 
     --disable-xnest \
     --disable-xorg \
     --disable-xvfb \
@@ -245,7 +244,7 @@ ENV DISPLAY=:1 \
     PERL5LIB=/usr/local/bin \
     OMP_WAIT_POLICY=PASSIVE \
     GOMP_SPINCOUNT=0 \
-    HOME=/config \
+    HOME=/home \
     START_DOCKER=true \
     PULSE_RUNTIME_PATH=/defaults \
     NVIDIA_DRIVER_CAPABILITIES=all
@@ -320,6 +319,8 @@ RUN \
     xf86-video-nouveau \
     xf86-video-qxl \
     xkbcomp \
+    torbrowser-launcher \
+    konsole \
     xkeyboard-config \
     xterm && \
   apk add --no-cache --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing/ \
@@ -393,5 +394,5 @@ RUN \
 COPY /root /
 
 # ports and volumes
-EXPOSE 3000 3001
+EXPOSE 6080 3001
 VOLUME /config
